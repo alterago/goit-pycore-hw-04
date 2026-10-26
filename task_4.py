@@ -1,7 +1,7 @@
 """Task 4: a console assistant bot that keeps a phone book.
 
 Commands (case-insensitive): hello, add <name> <phone>, change <name> <phone>,
-phone <name>, all, close / exit.
+phone <name>, all, close / exit. Ctrl+C or Ctrl+D also exits.
 """
 
 Contacts = dict[str, str]
@@ -64,7 +64,12 @@ def main() -> None:
     contacts: Contacts = {}
     print("Welcome to the assistant bot!")
     while True:
-        user_input = input("Enter a command: ")
+        try:
+            user_input = input("Enter a command: ")
+        except (KeyboardInterrupt, EOFError):
+            # Ctrl+C or Ctrl+D ends the bot the same way as "exit".
+            print("\nGood bye!")
+            break
         command, *args = parse_input(user_input)
 
         if command in ("close", "exit"):

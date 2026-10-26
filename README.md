@@ -26,4 +26,4 @@ python task_3.py /path/to/directory
 python task_4.py
 ```
 
-Bot commands (case-insensitive): `hello`, `add <name> <phone>`, `change <name> <phone>`, `phone <name>`, `all`, `close` / `exit`.
+Bot commands (case-insensitive): `hello`, `add <name> <phone>`, `change <name> <phone>`, `phone <name>`, `all`, `close` / `exit`; Ctrl+C or Ctrl+D also exits.
